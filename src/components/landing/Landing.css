@@ -21,7 +21,7 @@
 .bg-nft {
 	min-height: 800px;
 	width: 80%;
-	background: linear-gradient(0deg, #000000 33.15%, rgba(0, 0, 0, 0) 116.02%), url("BG_image.png");
+	background: linear-gradient(0deg, #000000 33.15%, rgba(0, 0, 0, 0) 116.02%), url("../../img/BG_image.png");
 }
 
 .mint {
