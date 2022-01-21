@@ -1,0 +1,19 @@
+.navbar {
+  padding: 20px 100px;
+  display: flex;
+}
+
+ul {
+  list-style-type: none;
+  margin-left: auto;
+  text-align: center;
+}
+
+li {
+  display: inline; 
+  padding: 28px;
+}
+a {
+  text-decoration: none;
+  color: white;
+}

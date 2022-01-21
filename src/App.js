@@ -1,23 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import twitter from './twitter.png';
+import discord from './discord.png';
+import Navbar from './navbar/navbar.js';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Navbar/>
       </header>
+      <body className="App-body">
+        <div className="bg-nft">
+          <div className="mint">
+            <p>Mint FiatFighter</p>
+            <p>0/0</p>
+            <button className="connect">Connect</button>
+            <div className="social">
+             <a className="social-link" href="https://twitter.com" target="_blank">
+              <img alt="twitter" src={twitter}/>
+             </a> 
+             <a className="social-link" href="https://discord.com" target="_blank">
+              <img alt="discord" src={discord}/>
+             </a> 
+            </div>
+          </div>
+        </div>
+      </body>
     </div>
   );
 }
