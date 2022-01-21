@@ -1,0 +1,104 @@
+.landing-page {
+  font-family: "Roboto";
+  font-weight: 600;
+  font-size: 16px;
+  color: white;
+  display: flex;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+}
+
+.image {
+  height: 100%;
+  width: 100%;
+	background-color: #010101;
+}
+
+.bg_img {
+  height: 80%;
+  margin: 50px;
+	background: linear-gradient(0deg, #000000 33.15%, rgba(0, 0, 0, 0) 116.02%), url("../../img/BG_image.png");
+}
+
+.login {
+  height: 100%;
+  width: 100%;
+  background-color: #242735;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.login img {
+  max-height: 200px;
+  margin: 50px;
+}
+
+.buttons {
+  margin: 0 50px 0 50px;
+}
+.metamask {
+	background: #eb8525;
+  border: none;
+  display: flex;
+  justify-content: center;
+	border-radius: 10px;
+	cursor: pointer;
+  margin-bottom: 50px;
+  padding: 0 80px;
+}
+
+.metamask img {
+  margin: 10px;
+  max-height: 32px;
+}
+
+.metamask p {
+  margin: 10px;
+}
+
+.other-wallet {
+  border: 1px solid #C4C4C4;
+  display: flex;
+  justify-content: center;
+	border-radius: 10px;
+	cursor: pointer;
+  margin-bottom: 20px;
+  padding: 0 80px;
+}
+
+.other-wallet img {
+  margin: 10px;
+  max-height: 32px;
+}
+
+.other-wallet p {
+  margin: 10px;
+}
+
+.info {
+  font-family: Roboto;
+  font-weight: 400;
+  text-align: center;
+  color: #6B7185; 
+}
+
+.info a {
+  text-decoration: underline;
+  color: #2B5CFF;
+  cursor: pointer;
+} 
+
+.terms {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.terms img {
+  max-height: 19px;
+  margin: 0 5px;
+}

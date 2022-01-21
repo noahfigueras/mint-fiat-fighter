@@ -5,6 +5,7 @@ import {
 } from "react-router-dom";
 
 import Landing from './components/landing/Landing.js';
+import Login from './components/login/Login.js';
 
 function App() {
   return (
@@ -14,13 +15,6 @@ function App() {
         <Route path="login" element={<Login/>}/>
       </Routes>
     </Router>
-  );
-}
-
-
-const Login = () => {
-  return (
-    <div>Login Page</div>
   );
 }
 
