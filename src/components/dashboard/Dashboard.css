@@ -31,6 +31,8 @@
   position: absolute;
   height: 100%;
   width: 100%;
+  color: white;
+  font-family: Roboto;
 }
 
 .menu{
@@ -66,7 +68,86 @@
   padding: 10px;
 }
 
-.dash{
+.dashboard{
   background: #242735;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 15% 85%;
+  padding: 20px;
+  font-family: Roboto;
 }
 
+.email-setup{
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(58.34deg, #4518DB 11.46%, #7B29FF 74.86%);
+  border-radius: 10px;
+  padding: 10px 40px ;
+}
+
+.login-btn{
+  display: flex;
+  align-items: center;
+  border: 0.5px solid #FFFFFF;
+  box-sizing: border-box;
+  border-radius: 6px;
+  width: 30%;
+}
+
+.login-btn img{
+  margin: 10px;
+}
+
+.login-btn p{
+  margin: 0px;
+}
+
+.blockchain-info{
+  display: flex;
+  flex-direction: column;
+}
+
+.blockchain-info h3{
+  color: #777B8A;
+}
+
+.token {
+  padding: 20px;
+  max-width: 400px;
+  background: linear-gradient(208.27deg, #000000 0%, #676767 95.3%);
+  border: 1px solid #303030;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.token h4 {
+  margin: 10px;
+}
+
+.token-btn {
+  display: flex;
+  align-items: center;
+  font-family: Roboto;
+}
+
+.deposit {
+  background-color: #FBBF24;
+  color:  black;
+  border-radius: 6px;
+  margin: 10px;
+} 
+
+.deposit p {
+  margin: 5px 40px; 
+}
+
+.withdraw {
+  border-radius: 6px;
+  border: 0.5px solid #FFFFFF;
+  box-sizing: border-box;
+  margin: 10px;
+} 
+
+.withdraw p {
+  margin: 5px 40px; 
+}

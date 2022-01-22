@@ -5,6 +5,7 @@ import inventory from '../../img/inventory.png';
 import activity from '../../img/activity.png';
 import settings from '../../img/settings.png';
 import profile from '../../img/profile.png';
+import infoCard from '../../img/info-card.png';
 
 import { ethers } from 'ethers';
 import React, { useState, useEffect } from 'react';
@@ -18,7 +19,17 @@ const Dashboard = ({Provider}) => {
 
   // Wallet
   const provider = new ethers.providers.Web3Provider(Provider);
+	provider.listAccounts().then((arr) => { if(arr.length === 0){ connect() } });
   const signer = provider.getSigner();
+	
+	// METAMASK - request connection
+	const connect = async () => {
+		try{
+			await provider.send('eth_requestAccounts', []);
+		} catch(e) {
+			console.log('Error connecting to metamask');
+		}
+	}
 
   const getAddress = async () => {
     const addr = await signer.getAddress();
@@ -85,10 +96,34 @@ const Dashboard = ({Provider}) => {
           </li>
         </ul>
       </div>
-      <div className="dash">
-        <p>Finish setting Up your account</p>
-      </div>
+
+			<div className="dashboard">
+					<div className="email-setup">
+						<h3>Let's complete setting up your account</h3>
+						<div className="login-btn">
+							<img src={infoCard} alt="info-card"/>
+							<p>Setup your email and password</p>
+						</div>
+					</div>
+					<div className="blockchain-info">
+						<h3>Wallets</h3>
+						<div className="content">
+							<div className="token">
+								<h4> 0 FTF</h4>
+								<div className="token-btn">
+									<div className="deposit">
+										<p>Deposit</p>
+									</div>
+									<div className="withdraw">
+										<p>Withdraw</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+			</div>
     </div>
+
    </div>
   );
 }
