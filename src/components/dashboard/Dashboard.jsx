@@ -1,6 +1,11 @@
 import './Dashboard.css';
 import logo from '../../img/logo.png';
+import account from '../../img/account.png';
+import inventory from '../../img/inventory.png';
+import activity from '../../img/activity.png';
+import settings from '../../img/settings.png';
 import profile from '../../img/profile.png';
+
 import { ethers } from 'ethers';
 import React, { useState, useEffect } from 'react';
 
@@ -9,32 +14,48 @@ const Dashboard = ({Provider}) => {
   // Hooks
   const [address, setAddress] = useState();
   const [eth, setEth] = useState();
+  const [activeTab, setActiveTab] = useState(null);
 
-  // Get Wallet
+  // Wallet
   const provider = new ethers.providers.Web3Provider(Provider);
   const signer = provider.getSigner();
 
   const getAddress = async () => {
     const addr = await signer.getAddress();
-    setAddress(addr);
+    setAddress(`${addr.slice(0,4)}...${addr.slice(38,42)}`);
   }
 
   const getEth = async () => {
     const eth = await signer.getBalance();
-    setEth(String(eth));
+    const balance = ethers.utils.formatEther(eth);
+    setEth(balance.slice(0,4));
+  }
+  
+  // Side-Menu
+  const activeMenu = (e) => {
+    const element = e.currentTarget;
+    if(activeTab === null){
+      element.parentElement.firstChild.classList.remove("selected");
+    } else {
+      activeTab.classList.remove("selected");
+    }
+    element.classList.add("selected");
+    setActiveTab(element);
   }
 
   useEffect(() => {
     getAddress();
     getEth();
-  });
+  }, []);
 
   return(
+  <div className="container">
+
 		<div className="navbar">
 			<img src={logo} alt="logo" />
       <div className="account">
-        <div classNamw="wallet">
-          <p><span>{eth} ETH </span>{address}</p>
+        <div className="wallet">
+          <p><span>{eth} ETH </span> | {address}</p>
         </div>
         <div className="profile">
           <img src={profile} alt="profile"/>
@@ -42,6 +63,33 @@ const Dashboard = ({Provider}) => {
         </div>
       </div>
 		</div>
+
+    <div className="grid">
+      <div className="menu">
+        <ul>
+          <li onClick={activeMenu} className="selected">
+            <img src={account} alt="account"/>
+            <p>Account</p>
+          </li>
+          <li onClick={activeMenu}>
+            <img src={inventory} alt="inventory"/>
+            <p>Inventory</p>
+          </li>
+          <li onClick={activeMenu}>
+            <img src={activity} alt="activity"/>
+            <p>Activity</p>
+          </li>
+          <li onClick={activeMenu}>
+            <img src={settings} alt="settings"/>
+            <p>Account Settings</p>
+          </li>
+        </ul>
+      </div>
+      <div className="dash">
+        <p>Finish setting Up your account</p>
+      </div>
+    </div>
+   </div>
   );
 }
 

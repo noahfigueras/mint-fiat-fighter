@@ -24,3 +24,49 @@
   margin: 10px;
   font-size: 16px;
 }
+
+.grid{
+  display: grid;
+  grid-template-columns: 20% 80%;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.menu{
+  background: #242735;
+  border-right: 0.5px solid rgba(255, 255, 255, 0.5);
+}
+
+.menu ul{
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  font-family: Roboto;
+}
+
+.menu li{
+  display: flex;
+  padding: 10px;
+  align-items: center;
+}
+
+.menu li:hover {
+  cursor: pointer;
+}
+
+.selected {
+  background: #333A57;
+  border-radius: 8px;
+}
+
+.menu img{
+  padding: 10px;
+}
+
+.dash{
+  background: #242735;
+}
+
