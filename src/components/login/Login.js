@@ -1,3 +1,4 @@
+import {useNavigate} from 'react-router-dom';
 import './Login.css';
 import logo from '../../img/logo2.png';
 import logoMetamask from '../../img/logo-metamask.png';
@@ -8,11 +9,14 @@ import info from '../../img/info.png';
 import { ethers } from "ethers";
 import WalletConnectProvider from "@walletconnect/web3-provider";
 
-const Login = () => {
+const Login = ({setLoggedIn}) => {
 	let Provider;
+	let navigate = useNavigate();
 
 	function setProvider(provider) {
 		Provider = new ethers.providers.Web3Provider(provider);
+		setLoggedIn(true);
+		navigate("/dashboard");
 	}
 
 	async function walletConnect() {
