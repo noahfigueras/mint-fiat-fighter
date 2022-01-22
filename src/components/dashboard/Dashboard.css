@@ -1,0 +1,26 @@
+.navbar{
+  display: flex;
+  background-color: #010101;
+  color: white;
+  font-family: Roboto;
+  padding: 0 40px 0 40px;
+}
+
+.account{
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.profile{
+  display: flex;
+  align-items: center;
+  margin-left: 50px;
+  font-size: 20px;
+}
+
+.wallet{
+  display: flex;
+  margin: 10px;
+  font-size: 16px;
+}

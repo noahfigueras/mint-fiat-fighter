@@ -6,15 +6,13 @@ import QR from '../../img/QR.png';
 import email from '../../img/email.png';
 import lightbolt from '../../img/lightbolt.png';
 import info from '../../img/info.png';
-import { ethers } from "ethers";
 import WalletConnectProvider from "@walletconnect/web3-provider";
 
-const Login = ({setLoggedIn}) => {
-	let Provider;
+const Login = ({setLoggedIn, setProvider}) => {
 	let navigate = useNavigate();
 
-	function setProvider(provider) {
-		Provider = new ethers.providers.Web3Provider(provider);
+	function redirect(provider) {
+		setProvider(provider);
 		setLoggedIn(true);
 		navigate("/dashboard");
 	}
@@ -25,7 +23,7 @@ const Login = ({setLoggedIn}) => {
 		});
 		try{
 			await provider.enable();
-			setProvider(provider);
+			redirect(provider);
 		} catch(err) {
 			console.log(err);
 		}
@@ -34,7 +32,7 @@ const Login = ({setLoggedIn}) => {
 	function metamask() {
 		if(window.ethereum) {
 			const provider = window.ethereum;	
-			setProvider(provider);
+			redirect(provider);
 		} else {
 			alert("Please Download metamask");
 		}
