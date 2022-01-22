@@ -19,7 +19,6 @@ const Dashboard = ({Provider}) => {
 
   // Wallet
   const provider = new ethers.providers.Web3Provider(Provider);
-	provider.listAccounts().then((arr) => { if(arr.length === 0){ connect() } });
   const signer = provider.getSigner();
 	
 	// METAMASK - request connection

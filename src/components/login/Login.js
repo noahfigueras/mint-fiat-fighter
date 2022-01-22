@@ -29,10 +29,15 @@ const Login = ({setLoggedIn, setProvider}) => {
 		}
 	}
 
-	function metamask() {
+	async function metamask() {
 		if(window.ethereum) {
-			const provider = window.ethereum;	
-			redirect(provider);
+			try{
+				const ethereum = window.ethereum;	
+				await ethereum.request({method: 'eth_requestAccounts'});
+				redirect(ethereum);
+			} catch(err) {
+				console.log('Error connecting to metamask');
+			}
 		} else {
 			alert("Please Download metamask");
 		}
