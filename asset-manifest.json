@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/noahfigueras/mint-fiat-fighter/static/css/main.5f01f514.chunk.css",
-    "main.js": "/noahfigueras/mint-fiat-fighter/static/js/main.16cc5171.chunk.js",
-    "main.js.map": "/noahfigueras/mint-fiat-fighter/static/js/main.16cc5171.chunk.js.map",
+    "main.js": "/noahfigueras/mint-fiat-fighter/static/js/main.adf1bb88.chunk.js",
+    "main.js.map": "/noahfigueras/mint-fiat-fighter/static/js/main.adf1bb88.chunk.js.map",
     "runtime-main.js": "/noahfigueras/mint-fiat-fighter/static/js/runtime-main.32a09bb1.js",
     "runtime-main.js.map": "/noahfigueras/mint-fiat-fighter/static/js/runtime-main.32a09bb1.js.map",
     "static/js/2.d6de6ae5.chunk.js": "/noahfigueras/mint-fiat-fighter/static/js/2.d6de6ae5.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.32a09bb1.js",
     "static/js/2.d6de6ae5.chunk.js",
     "static/css/main.5f01f514.chunk.css",
-    "static/js/main.16cc5171.chunk.js"
+    "static/js/main.adf1bb88.chunk.js"
   ]
 }
