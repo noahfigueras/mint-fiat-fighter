@@ -16,10 +16,10 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Landing/>}/>
-        <Route path="login" element={<Login setLoggedIn={setLoggedIn} setProvider={setProvider}/>}/>
+        <Route path='/' element={<Landing/>}/>
+        <Route path='/login' element={<Login setLoggedIn={setLoggedIn} setProvider={setProvider}/>}/>
         {loggedIn && (
-          <Route path="dashboard" element={<Dashboard Provider={provider}/>} />
+          <Route path='/dashboard' element={<Dashboard Provider={provider}/>} />
         )}
       </Routes>
     </Router>
