@@ -85,7 +85,7 @@ const Dashboard = ({Provider}) => {
 		getBnb();
     getEth();
 		getNfts();
-  }, []);
+  }, );
 
   return(
   <div className="container">
