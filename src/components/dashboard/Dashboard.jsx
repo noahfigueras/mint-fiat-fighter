@@ -56,16 +56,24 @@ const Dashboard = ({Provider}) => {
   }
   
   const getBnb = async () => {
-    const addr = await signer.getAddress();
-    const bnb = await bnbContract.balanceOf(addr);
-    const balance = ethers.utils.formatEther(bnb);
-    setBnb(balance.slice(0,4));
+    try{
+      const addr = await signer.getAddress();
+      const bnb = await bnbContract.balanceOf(addr);
+      const balance = ethers.utils.formatEther(bnb);
+      setBnb(balance.slice(0,4));
+    } catch(err) {
+      console.log(err);   
+    }
   }
 	
 	const getNfts = async () => {
-    const addr = await signer.getAddress();
-    const amount = await nftContract.balanceOf(addr);
-		setNfts(String(amount));
+    try{
+      const addr = await signer.getAddress();
+      const amount = await nftContract.balanceOf(addr);
+      setNfts(String(amount));
+    } catch (err){
+      console.log(err);
+    }
 	}
 
   // Side-Menu
