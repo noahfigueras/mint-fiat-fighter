@@ -6,6 +6,7 @@ import activity from '../../img/activity.png';
 import settings from '../../img/settings.png';
 import profile from '../../img/profile.png';
 import infoCard from '../../img/info-card.png';
+import land from '../../img/land.png';
 
 import { ethers } from 'ethers';
 import React, { useState, useEffect } from 'react';
@@ -15,20 +16,33 @@ const Dashboard = ({Provider}) => {
   // Hooks
   const [address, setAddress] = useState();
   const [eth, setEth] = useState();
+  const [bnb, setBnb] = useState();
+	const [nfts, setNfts] = useState();
   const [activeTab, setActiveTab] = useState(null);
 
   // Wallet
   const provider = new ethers.providers.Web3Provider(Provider);
   const signer = provider.getSigner();
 	
-	// METAMASK - request connection
-	const connect = async () => {
-		try{
-			await provider.send('eth_requestAccounts', []);
-		} catch(e) {
-			console.log('Error connecting to metamask');
-		}
-	}
+	// Token Contracts Info
+	const tokenAbi = [
+		"function name() view returns (string)",
+		"function symbol() view returns (string)",
+		"function balanceOf(address) view returns (uint)",
+		"function transfer(address to, uint amount)",
+		"event Transfer(address indexed from, address indexed to, uint amount)"
+	]; 
+	
+	const bnbAddress = '0xB8c77482e45F1F44dE1745F52C74426C631bDD52'; // Mainnet
+	const bnbContract = new ethers.Contract(bnbAddress, tokenAbi, provider);
+
+	// NFT Contract Info
+	const nftAbi = [
+		"function balanceOf(address) view returns (uint)"
+	];
+	
+	const nftAddress = '0x50f5474724e0Ee42D9a4e711ccFB275809Fd6d4a';
+	const nftContract = new ethers.Contract(nftAddress, nftAbi, provider);
 
   const getAddress = async () => {
     const addr = await signer.getAddress();
@@ -41,6 +55,19 @@ const Dashboard = ({Provider}) => {
     setEth(balance.slice(0,4));
   }
   
+  const getBnb = async () => {
+    const addr = await signer.getAddress();
+    const bnb = await bnbContract.balanceOf(addr);
+    const balance = ethers.utils.formatEther(bnb);
+    setBnb(balance.slice(0,4));
+  }
+	
+	const getNfts = async () => {
+    const addr = await signer.getAddress();
+    const amount = await nftContract.balanceOf(addr);
+		setNfts(String(amount));
+	}
+
   // Side-Menu
   const activeMenu = (e) => {
     const element = e.currentTarget;
@@ -55,7 +82,9 @@ const Dashboard = ({Provider}) => {
 
   useEffect(() => {
     getAddress();
+		getBnb();
     getEth();
+		getNfts();
   }, []);
 
   return(
@@ -108,7 +137,7 @@ const Dashboard = ({Provider}) => {
 						<h3>Wallets</h3>
 						<div className="content">
 							<div className="token">
-								<h4> 0 FTF</h4>
+								<h4> {bnb} BNB </h4>
 								<div className="token-btn">
 									<div className="deposit">
 										<p>Deposit</p>
@@ -117,6 +146,10 @@ const Dashboard = ({Provider}) => {
 										<p>Withdraw</p>
 									</div>
 								</div>
+							</div>
+							<div className="token">
+								<img src={land} alt="land"/>
+								<h1>{nfts}</h1>
 							</div>
 						</div>
 					</div>

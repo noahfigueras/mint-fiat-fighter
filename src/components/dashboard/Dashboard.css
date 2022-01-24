@@ -111,7 +111,12 @@
   color: #777B8A;
 }
 
+.content {
+  display: flex;
+}
+
 .token {
+  margin: 20px;
   padding: 20px;
   max-width: 400px;
   background: linear-gradient(208.27deg, #000000 0%, #676767 95.3%);
@@ -122,6 +127,10 @@
 
 .token h4 {
   margin: 10px;
+}
+
+.token h1 {
+  text-align: center;
 }
 
 .token-btn {
