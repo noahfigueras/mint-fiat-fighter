@@ -2,6 +2,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
+	Navigate
 } from "react-router-dom";
 import React, { useState } from 'react';
 
@@ -16,8 +17,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<Landing/>}/>
-        <Route path='/login' element={<Login setLoggedIn={setLoggedIn} setProvider={setProvider}/>}/>
+				<Route path="/" element={<Navigate replace to="/login" />} />
+        <Route index path='/login' element={<Login setLoggedIn={setLoggedIn} setProvider={setProvider}/>}/>
         {loggedIn && (
           <Route path='/dashboard' element={<Dashboard Provider={provider}/>} />
         )}
