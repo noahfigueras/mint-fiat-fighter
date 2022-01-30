@@ -1,8 +1,9 @@
+
 .navbar{
   display: flex;
-  background-color: #010101;
-  color: white;
-  font-family: Roboto;
+  background-color: #F4A10C;
+  color: #000000;
+  font-family: 'Dogica';
   padding: 0 40px 0 40px;
 }
 
@@ -16,13 +17,17 @@
   display: flex;
   align-items: center;
   margin-left: 50px;
-  font-size: 20px;
+  font-size: 16px;
+}
+
+.profile img {
+  padding: 5px;
 }
 
 .wallet{
   display: flex;
   margin: 10px;
-  font-size: 16px;
+  font-size: 12px;
 }
 
 .grid{
@@ -32,7 +37,11 @@
   height: 100%;
   width: 100%;
   color: white;
-  font-family: Roboto;
+  font-family: 'DogicaPixelRegular';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 12px;
 }
 
 .menu{
@@ -40,19 +49,46 @@
   border-right: 0.5px solid rgba(255, 255, 255, 0.5);
 }
 
+.cluse{
+  border: 1px solid #F4A10C;
+  box-sizing: border-box;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.cluse-edit{
+  display: flex;
+  margin: 5px;
+  padding: 10px;
+}
+
+.cluse-btn{
+  border: 1px solid #FFFFFF;
+  box-sizing: border-box;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  padding: 5px;
+}
+
 .menu ul{
   padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: white;
-  font-family: Roboto;
 }
 
 .menu li{
   display: flex;
   padding: 10px;
   align-items: center;
+  border: 1px solid rgba(244, 161, 12, 0.3);
+  border-radius: 8px;
+  margin: 10px 0;
 }
 
 .menu li:hover {
@@ -60,7 +96,8 @@
 }
 
 .selected {
-  background: #333A57;
+  background: #F4A10C;
+  color: #000000;
   border-radius: 8px;
 }
 

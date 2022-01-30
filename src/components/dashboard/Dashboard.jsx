@@ -114,6 +114,16 @@ const Dashboard = ({Provider}) => {
     <div className="grid">
       <div className="menu">
         <ul>
+          <div className="cluse">
+            <div className="cluse-edit">
+              <p>CLUSE</p>
+              <img src={account} alt="cluse"/>
+            </div>
+            <div className="cluse-btn">
+              <img src={account} alt="qr-code"/>
+              <p>Show QR</p>
+            </div>
+          </div>
           <li onClick={activeMenu} className="selected">
             <img src={account} alt="account"/>
             <p>Account</p>
