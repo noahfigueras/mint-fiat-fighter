@@ -6,6 +6,8 @@ import activity from '../../img/activity.png';
 import settings from '../../img/settings.png';
 import profile from '../../img/profile.png';
 import logout from '../../img/logout.png';
+import edit from '../../img/edit.png';
+import qr from '../../img/qr.png';
 import infoCard from '../../img/info-card.png';
 import land from '../../img/land.png';
 
@@ -118,10 +120,10 @@ const Dashboard = ({Provider}) => {
           <div className="cluse">
             <div className="cluse-edit">
               <p>CLUSE</p>
-              <img src={account} alt="cluse"/>
+              <img src={edit} alt="edit-cluse"/>
             </div>
             <div className="cluse-btn">
-              <img src={account} alt="qr-code"/>
+              <img src={qr} alt="qr-code"/>
               <p>Show QR</p>
             </div>
           </div>
