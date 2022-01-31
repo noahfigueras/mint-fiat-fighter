@@ -5,6 +5,7 @@ import inventory from '../../img/inventory.png';
 import activity from '../../img/activity.png';
 import settings from '../../img/settings.png';
 import profile from '../../img/profile.png';
+import logout from '../../img/logout.png';
 import infoCard from '../../img/info-card.png';
 import land from '../../img/land.png';
 
@@ -141,6 +142,10 @@ const Dashboard = ({Provider}) => {
             <p>Account Settings</p>
           </li>
         </ul>
+        <div className="logout">
+          <img src={logout} alt="logout"/>
+          <p>Logout</p>
+        </div>
       </div>
 
 			<div className="dashboard">
