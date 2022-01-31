@@ -8,8 +8,12 @@ import profile from '../../img/profile.png';
 import logout from '../../img/logout.png';
 import edit from '../../img/edit.png';
 import qr from '../../img/qr.png';
-import infoCard from '../../img/info-card.png';
-import land from '../../img/land.png';
+import key from '../../img/key.png';
+import nft from '../../img/nft-img.png';
+import nftRound from '../../img/nft-round.png';
+import nftSettings from '../../img/nft-settings.png';
+import speed from '../../img/speed.png';
+import coin from '../../img/coin.png';
 
 import { ethers } from 'ethers';
 import React, { useState, useEffect } from 'react';
@@ -116,7 +120,6 @@ const Dashboard = ({Provider}) => {
 
     <div className="grid">
       <div className="menu">
-        <ul>
           <div className="cluse">
             <div className="cluse-edit">
               <p>CLUSE</p>
@@ -127,6 +130,7 @@ const Dashboard = ({Provider}) => {
               <p>Show QR</p>
             </div>
           </div>
+        <ul>
           <li onClick={activeMenu} className="selected">
             <img src={account} alt="account"/>
             <p>Account</p>
@@ -154,28 +158,72 @@ const Dashboard = ({Provider}) => {
 					<div className="email-setup">
 						<h3>Let's complete setting up your account</h3>
 						<div className="login-btn">
-							<img src={infoCard} alt="info-card"/>
+							<img src={key} alt="key"/>
 							<p>Setup your email and password</p>
 						</div>
 					</div>
+          <div className="fiat-fighterz"> 
+            <div className="fiat-info">
+              <div className="img-title">
+                <img src={logo} alt="logo-2"/>
+                <h3>Your FiatFighterz</h3>
+              </div>
+              <p>This is where you can rename your FiatFighterz, customize
+                 their appearance, and change their loadouts.
+              </p>
+            </div>
+            <div className="fiat-info">
+              <div className="img-title">
+                <img src={coin} alt="coin"/>
+                <div className="balance">
+                  <h3>Price: 4.314 $</h3>
+                  <h3>Balance: {bnb}</h3>
+                </div>
+              </div>
+              <div className="trade">
+                <p>Trade</p>
+              </div>
+              <p>Lorem Ipsum dolor sit am consectetur adipiscing elit. Etiam
+                 vehicul aliquiet facilisi euismod.
+              </p>
+            </div>
+          </div>
+
 					<div className="blockchain-info">
-						<h3>Wallets</h3>
-						<div className="content">
-							<div className="token">
-								<h4> {bnb} BNB </h4>
-								<div className="token-btn">
-									<div className="deposit">
-										<p>Deposit</p>
-									</div>
-									<div className="withdraw">
-										<p>Withdraw</p>
-									</div>
-								</div>
-							</div>
-							<div className="token">
-								<img src={land} alt="land"/>
-								<h1>{nfts}</h1>
-							</div>
+						<div className="nft">
+              <div className="nft-border">
+                <img src={nft} alt="nft-img"/>
+              </div>
+              <div className="nft-title">
+                <img src={nftRound} alt="nft-img"/>
+                <div className="level">
+                  <p><b>Clause 33</b></p>
+                  <p>Level 10</p>
+                </div>
+                <img src={nftSettings} alt="nft-settings"/>
+              </div>
+              <div id="nft-attributes">
+                <div className="attribute">                
+                  <img src={speed} alt="nft-speed"/>
+                  <p id="nft-separator">Speed</p>
+                  <p>3</p>
+                </div>
+                <div className="attribute">                
+                  <img src={speed} alt="nft-speed"/>
+                  <p id="nft-separator">Attack</p>
+                  <p>3</p>
+                </div>
+                <div className="attribute">                
+                  <img src={speed} alt="nft-speed"/>
+                  <p id="nft-separator">Defense</p>
+                  <p>17</p>
+                </div>
+                <div className="attribute">                
+                  <img src={speed} alt="nft-speed"/>
+                  <p id="nft-separator">Vigor</p>
+                  <p>6</p>
+                </div>
+              </div>
 						</div>
 					</div>
 			</div>

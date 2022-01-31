@@ -45,6 +45,7 @@
 }
 
 .menu{
+  height: 100%;
   background: #242735;
   border-right: 0.5px solid #F4A10C; 
   padding: 20px;
@@ -128,18 +129,69 @@
 .dashboard{
   background: #242735;
   height: 100%;
-  display: grid;
-  grid-template-rows: 15% 85%;
   padding: 20px;
-  font-family: Roboto;
+  font-family: 'DogicaPixelRegular';
 }
 
 .email-setup{
   display: flex;
   flex-direction: column;
-  background: linear-gradient(58.34deg, #4518DB 11.46%, #7B29FF 74.86%);
-  border-radius: 10px;
-  padding: 10px 40px ;
+  background: rgba(21, 27, 68, 0.7);
+  border: 1px solid #F4A10C;
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 40px ;
+}
+
+.email-setup h3{
+  margin: 20px;
+}
+
+.fiat-fighterz{
+  display: flex;
+  margin-top: 40px;
+}
+
+.fiat-info{
+  background: rgba(21, 27, 68, 0.7);
+  border: 1px solid #F4A10C;
+  box-sizing: border-box;
+  border-radius: 5px; 
+}
+
+.fiat-info p{
+  font-size: 10px;
+  line-height: 20px;
+  margin: 20px;
+}
+
+.fiat-info:first-child{
+  margin-right: 40px;
+}
+
+.img-title{
+  display: flex;
+  align-items: center;
+  margin: 20px;
+}
+
+.img-title img {
+  height: 50px;
+  width: 50px;
+}
+
+.trade{
+  font-size: 12px; 
+  background: #F4A10C;
+  border-radius: 4px;
+  text-align: center;
+  color: black;
+  margin: 20px;
+  max-width: 100px;
+}
+
+.trade:hover{
+  cursor: pointer;
 }
 
 .login-btn{
@@ -149,6 +201,7 @@
   box-sizing: border-box;
   border-radius: 6px;
   width: 30%;
+  margin: 20px;
 }
 
 .login-btn img{
@@ -161,59 +214,44 @@
 
 .blockchain-info{
   display: flex;
-  flex-direction: column;
+  margin-top: 40px;
 }
 
-.blockchain-info h3{
-  color: #777B8A;
-}
-
-.content {
-  display: flex;
-}
-
-.token {
-  margin: 20px;
-  padding: 20px;
-  max-width: 400px;
-  background: linear-gradient(208.27deg, #000000 0%, #676767 95.3%);
-  border: 1px solid #303030;
+.nft {
+  max-width: 600px;
+  background: #161641;
+  border: 1px solid #F4A10C;
   box-sizing: border-box;
-  border-radius: 10px;
+  border-radius: 2px;
+  margin: 20px;
 }
 
-.token h4 {
-  margin: 10px;
+.nft-border{
+  border-top: 4px solid #F4A10C;
+  border-left: 4px solid #F4A10C;
+  border-right: 4px solid #F4A10C;
+  background: linear-gradient(180deg, #561998 0%, #140A3C 100%);
 }
 
-.token h1 {
-  text-align: center;
+.nft-title{
+  display: flex;
+  padding: 5px;
+  align-items: center;
+  justify-content: center;
 }
 
-.token-btn {
+.level{
+  padding: 10px;
+  font-size: 12px;
+}
+
+.attribute{
   display: flex;
   align-items: center;
-  font-family: Roboto;
+  margin: 10px;
 }
 
-.deposit {
-  background-color: #FBBF24;
-  color:  black;
-  border-radius: 6px;
-  margin: 10px;
-} 
-
-.deposit p {
-  margin: 5px 40px; 
-}
-
-.withdraw {
-  border-radius: 6px;
-  border: 0.5px solid #FFFFFF;
-  box-sizing: border-box;
-  margin: 10px;
-} 
-
-.withdraw p {
-  margin: 5px 40px; 
+#nft-separator{
+  margin-right: 20px;
+  margin-left: 20px;
 }
