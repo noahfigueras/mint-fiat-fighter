@@ -14,7 +14,7 @@ const Login = ({setLoggedIn, setProvider}) => {
 	function redirect(provider) {
 		setProvider(provider);
 		setLoggedIn(true);
-		navigate("/dashboard");
+		navigate(process.env.PUBLIC_URL + "/dashboard");
 	}
 
 	async function walletConnect() {

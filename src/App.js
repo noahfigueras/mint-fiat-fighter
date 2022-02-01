@@ -17,10 +17,10 @@ function App() {
   return (
     <Router>
       <Routes>
-				<Route path="/" element={<Navigate replace to="/login" />} />
-        <Route index path='/login' element={<Login setLoggedIn={setLoggedIn} setProvider={setProvider}/>}/>
+				<Route path={process.env.PUBLIC_URL} element={<Navigate replace to={process.env.PUBLIC_URL + "/login"} />} />
+        <Route  path={process.env.PUBLIC_URL + "/login"} element={<Login setLoggedIn={setLoggedIn} setProvider={setProvider}/>}/>
         {loggedIn && (
-          <Route path='/dashboard' element={<Dashboard Provider={provider}/>} />
+          <Route path={process.env.PUBLIC_URL + "/dashboard"} element={<Dashboard Provider={provider}/>} />
         )}
       </Routes>
     </Router>
