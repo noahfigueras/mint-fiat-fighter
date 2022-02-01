@@ -18,6 +18,8 @@ import coin from '../../img/coin.png';
 import { ethers } from 'ethers';
 import React, { useState, useEffect } from 'react';
 
+import Form from './Form.js';
+
 const Dashboard = ({Provider}) => {
   
   // Hooks
@@ -26,6 +28,7 @@ const Dashboard = ({Provider}) => {
   const [bnb, setBnb] = useState();
 	const [nfts, setNfts] = useState();
   const [activeTab, setActiveTab] = useState(null);
+	const [activeForm, setActiveForm] = useState(false);
 
   // Wallet
   const provider = new ethers.providers.Web3Provider(Provider);
@@ -95,6 +98,10 @@ const Dashboard = ({Provider}) => {
     setActiveTab(element);
   }
 
+	const emailSetup = () => {
+		setActiveForm(true);
+	}
+
   useEffect(() => {
     getAddress();
 		getBnb();
@@ -117,6 +124,8 @@ const Dashboard = ({Provider}) => {
         </div>
       </div>
 		</div>
+
+		<Form active={activeForm} setActive={setActiveForm}/>
 
     <div className="grid">
       <div className="menu">
@@ -157,7 +166,7 @@ const Dashboard = ({Provider}) => {
 			<div className="dashboard">
 					<div className="email-setup">
 						<h3>Let's complete setting up your account</h3>
-						<div className="login-btn">
+						<div onClick={emailSetup} className="login-btn">
 							<img src={key} alt="key"/>
 							<p>Setup your email and password</p>
 						</div>
