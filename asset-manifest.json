@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/mint-fiat-fighter/static/css/main.0006cda3.chunk.css",
-    "main.js": "/mint-fiat-fighter/static/js/main.d00d0bd8.chunk.js",
-    "main.js.map": "/mint-fiat-fighter/static/js/main.d00d0bd8.chunk.js.map",
+    "main.css": "/mint-fiat-fighter/static/css/main.77821342.chunk.css",
+    "main.js": "/mint-fiat-fighter/static/js/main.915513b7.chunk.js",
+    "main.js.map": "/mint-fiat-fighter/static/js/main.915513b7.chunk.js.map",
     "runtime-main.js": "/mint-fiat-fighter/static/js/runtime-main.4240d109.js",
     "runtime-main.js.map": "/mint-fiat-fighter/static/js/runtime-main.4240d109.js.map",
-    "static/js/2.4ea1ce79.chunk.js": "/mint-fiat-fighter/static/js/2.4ea1ce79.chunk.js",
-    "static/js/2.4ea1ce79.chunk.js.map": "/mint-fiat-fighter/static/js/2.4ea1ce79.chunk.js.map",
+    "static/js/2.b5d1633b.chunk.js": "/mint-fiat-fighter/static/js/2.b5d1633b.chunk.js",
+    "static/js/2.b5d1633b.chunk.js.map": "/mint-fiat-fighter/static/js/2.b5d1633b.chunk.js.map",
     "index.html": "/mint-fiat-fighter/index.html",
-    "static/css/main.0006cda3.chunk.css.map": "/mint-fiat-fighter/static/css/main.0006cda3.chunk.css.map",
-    "static/js/2.4ea1ce79.chunk.js.LICENSE.txt": "/mint-fiat-fighter/static/js/2.4ea1ce79.chunk.js.LICENSE.txt",
+    "static/css/main.77821342.chunk.css.map": "/mint-fiat-fighter/static/css/main.77821342.chunk.css.map",
+    "static/js/2.b5d1633b.chunk.js.LICENSE.txt": "/mint-fiat-fighter/static/js/2.b5d1633b.chunk.js.LICENSE.txt",
     "static/media/Login.css": "/mint-fiat-fighter/static/media/BG_image.d18038aa.png",
     "static/media/logo2.a924d20d.png": "/mint-fiat-fighter/static/media/logo2.a924d20d.png"
   },
   "entrypoints": [
     "static/js/runtime-main.4240d109.js",
-    "static/js/2.4ea1ce79.chunk.js",
-    "static/css/main.0006cda3.chunk.css",
-    "static/js/main.d00d0bd8.chunk.js"
+    "static/js/2.b5d1633b.chunk.js",
+    "static/css/main.77821342.chunk.css",
+    "static/js/main.915513b7.chunk.js"
   ]
 }
