@@ -128,7 +128,7 @@ const Dashboard = ({Provider}) => {
 			<img src={logo} alt="logo" />
       <div className="account">
         <div className="wallet">
-          <p><span>{eth} ETH </span> | {address}</p>
+          <p><span>{eth} MATIC </span> | {address}</p>
         </div>
         <div className="profile">
           <img src={profile} alt="profile"/>
