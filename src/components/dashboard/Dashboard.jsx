@@ -28,6 +28,7 @@ const Dashboard = ({Provider}) => {
   const [token, setToken] = useState();
 	const [price, setPrice] = useState();
 	const [nfts, setNfts] = useState();
+	const [metadata, setMetadata] = useState(null);
   const [activeTab, setActiveTab] = useState(null);
 	const [activeForm, setActiveForm] = useState(false);
 
@@ -51,10 +52,10 @@ const Dashboard = ({Provider}) => {
 	// NFT Contract Info
 	const nftAbi = [
 		"function balanceOf(address) view returns (uint)",
-		"function baseURI() view returns (string memory)"
+		"function tokenURI(uint256) view returns (string memory)"
 	];
 	
-	const nftAddress = '0x7227e371540CF7b8e512544Ba6871472031F3335';
+	const nftAddress = '0xfD12ec7ea4B381a79C78FE8b2248b4c559011ffb';
 	const nftContract = new ethers.Contract(nftAddress, nftAbi, provider);
 
   const getAddress = async () => {
@@ -87,6 +88,10 @@ const Dashboard = ({Provider}) => {
     try{
       const addr = await signer.getAddress();
       const amount = await nftContract.balanceOf(addr);
+      const uri = await nftContract.tokenURI(10);
+			const res = await fetch(uri);
+			const meta = await res.json();
+			setMetadata(meta);
       setNfts(String(amount));
     } catch (err){
       console.log(err);
@@ -110,11 +115,11 @@ const Dashboard = ({Provider}) => {
 	}
 
   useEffect(() => {
+		getNfts();
     getAddress();
 		getToken();
     getEth();
-		getNfts();
-  }, );
+  }, []);
 
   return(
   <div className="container">
@@ -205,10 +210,11 @@ const Dashboard = ({Provider}) => {
             </div>
           </div>
 
+					{metadata !== null &&
 					<div className="blockchain-info">
 						<div className="nft">
               <div className="nft-border">
-                <img src={nft} alt="nft-img"/>
+                <img src={metadata.image} alt="nft-img"/>
               </div>
               <div className="nft-title">
                 <img src={nftRound} alt="nft-img"/>
@@ -242,6 +248,7 @@ const Dashboard = ({Provider}) => {
               </div>
 						</div>
 					</div>
+					}
 			</div>
     </div>
 
