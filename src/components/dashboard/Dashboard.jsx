@@ -25,7 +25,8 @@ const Dashboard = ({Provider}) => {
   // Hooks
   const [address, setAddress] = useState();
   const [eth, setEth] = useState();
-  const [bnb, setBnb] = useState();
+  const [token, setToken] = useState();
+	const [price, setPrice] = useState();
 	const [nfts, setNfts] = useState();
   const [activeTab, setActiveTab] = useState(null);
 	const [activeForm, setActiveForm] = useState(false);
@@ -43,15 +44,17 @@ const Dashboard = ({Provider}) => {
 		"event Transfer(address indexed from, address indexed to, uint amount)"
 	]; 
 	
-	const bnbAddress = '0xB8c77482e45F1F44dE1745F52C74426C631bDD52'; // Mainnet
-	const bnbContract = new ethers.Contract(bnbAddress, tokenAbi, provider);
+	const tokenAddress = '0xcd7361ac3307D1C5a46b63086a90742Ff44c63B3'; // Mainnet
+	const tokenContract = new ethers.Contract(tokenAddress, tokenAbi, provider);
+	const tokenPriceUrl = 'https://api.coingecko.com/api/v3/simple/price?ids=crypto-raiders&vs_currencies=usd&include_market_cap=false&include_24hr_vol=false&include_24hr_change=false&include_last_updated_at=false';
 
 	// NFT Contract Info
 	const nftAbi = [
-		"function balanceOf(address) view returns (uint)"
+		"function balanceOf(address) view returns (uint)",
+		"function baseURI() view returns (string memory)"
 	];
 	
-	const nftAddress = '0x50f5474724e0Ee42D9a4e711ccFB275809Fd6d4a';
+	const nftAddress = '0x7227e371540CF7b8e512544Ba6871472031F3335';
 	const nftContract = new ethers.Contract(nftAddress, nftAbi, provider);
 
   const getAddress = async () => {
@@ -65,12 +68,16 @@ const Dashboard = ({Provider}) => {
     setEth(balance.slice(0,4));
   }
   
-  const getBnb = async () => {
+  const getToken = async () => {
     try{
       const addr = await signer.getAddress();
-      const bnb = await bnbContract.balanceOf(addr);
-      const balance = ethers.utils.formatEther(bnb);
-      setBnb(balance.slice(0,4));
+      const token = await tokenContract.balanceOf(addr);
+      const balance = ethers.utils.formatEther(token);
+      setToken(balance.slice(0,4));
+			//Coingecko price
+			const res = await fetch(tokenPriceUrl);
+			const data = await res.json();
+			setPrice(data["crypto-raiders"].usd);
     } catch(err) {
       console.log(err);   
     }
@@ -104,7 +111,7 @@ const Dashboard = ({Provider}) => {
 
   useEffect(() => {
     getAddress();
-		getBnb();
+		getToken();
     getEth();
 		getNfts();
   }, );
@@ -185,8 +192,8 @@ const Dashboard = ({Provider}) => {
               <div className="img-title">
                 <img src={coin} alt="coin"/>
                 <div className="balance">
-                  <h3>Price: 4.314 $</h3>
-                  <h3>Balance: {bnb}</h3>
+                  <h3>Price: {price} $</h3>
+                  <h3>Balance: {token}</h3>
                 </div>
               </div>
               <div className="trade">
