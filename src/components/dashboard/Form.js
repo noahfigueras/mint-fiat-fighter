@@ -14,6 +14,7 @@ const Form = ({active, setActive}) => {
   const handleSubmit = () => {
     // Submit Post logic to server
     setActive(false);
+	document.body.style.overflowY = "auto";
   }
 
   if(active) {
