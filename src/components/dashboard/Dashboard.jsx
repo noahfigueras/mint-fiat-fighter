@@ -112,6 +112,7 @@ const Dashboard = ({Provider}) => {
 
 	const emailSetup = () => {
 		setActiveForm(true);
+		document.body.style.overflowY = "hidden";
 	}
 
   useEffect(() => {
@@ -202,7 +203,7 @@ const Dashboard = ({Provider}) => {
                 </div>
               </div>
               <div className="trade">
-                <p>Trade</p>
+                <p id="trade-p">Trade</p>
               </div>
               <p>Lorem Ipsum dolor sit am consectetur adipiscing elit. Etiam
                  vehicul aliquiet facilisi euismod.
@@ -219,7 +220,7 @@ const Dashboard = ({Provider}) => {
               <div className="nft-title">
                 <img src={nftRound} alt="nft-img"/>
                 <div className="level">
-                  <p><b>Clause 33</b></p>
+                  <p className="bold" >Clause 33</p>
                   <p>Level 10</p>
                 </div>
                 <img src={nftSettings} alt="nft-settings"/>
